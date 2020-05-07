@@ -39,6 +39,7 @@ entity Multiplex is
            cntr_2 : in std_logic_vector(3 downto 0);
            cntr_3 : in std_logic_vector(3 downto 0);
            cntr_4 : in std_logic_vector(3 downto 0);
+           dec_pos : in std_logic_vector(2 downto 0);
            disp : out unsigned (7 downto 0);
            cntr_out: out std_logic_vector(3 downto 0);
            dec_point: out STD_LOGIC);
@@ -59,11 +60,11 @@ begin
         --cases for which number is displayed\
         case temp is					 -- abcdefg segments
 				when "11111110"	=> cntr_out <= cntr_1;
-				                   dec_point <= '1';	  -- if BCD is "0000" write a zero to display
+				                   dec_point <= dec_pos(2);	  -- if BCD is "0000" write a zero to display
 				when "11111101"	=> cntr_out <= cntr_2;	  -- etc...
-				                   dec_point <= '1';
+				                   dec_point <= dec_pos(1);
 				when "11111011"	=> cntr_out <= cntr_3; 
-				                   dec_point <= '0';   --decimal point here
+				                   dec_point <= dec_pos(0);   --decimal point here
 				when "11110111"	=> cntr_out <= cntr_4;
 				                   dec_point <= '1';
 				when others => cntr_out <= "0000";

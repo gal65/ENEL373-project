@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1584766467">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1588839539">
   <File Type="PA-TCL" Name="ctr_top.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="ctr_top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="ctr_top_reports.tcl"/>
@@ -15,6 +15,12 @@
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../VHDL Code/BCD_to_7SEG.vhd"/>
         <Attr Name="ImportTime" Val="1582488660"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/DOT_CONTROL.vhd">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -40,6 +46,12 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/cntr_clk.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/input_multiplexer.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -73,6 +85,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/state_change_trigger.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/dot_count.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>

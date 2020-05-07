@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='P:/ENEL373/project_1/project_1.runs/impl_1'
+HD_PWD='C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

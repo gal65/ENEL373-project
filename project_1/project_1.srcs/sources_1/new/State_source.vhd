@@ -38,11 +38,12 @@ entity state is
             change_state : in STD_LOGIC;
             S1 : out STD_LOGIC;
             S2 : out STD_LOGIC;
-            S3 : out STD_LOGIC);
+            S3 : out STD_LOGIC;
+            S4 : out STD_LOGIC);
 end state;
 
 architecture Behavioral of state is
-    signal states: STD_LOGIC_VECTOR(2 downto 0);
+    signal states: STD_LOGIC_VECTOR(3 downto 0);
     signal flag: STD_LOGIC := '0';
 begin
 state_switch: process (clk_in) 
@@ -51,10 +52,11 @@ begin
            if change_state = '1' and flag = '0' then
                 flag <= '1';
                 case states is					 -- abcdefg segments
-                       when "100" => states <= "010";	  -- go to pause
-                       when "010" => states <= "001";	  -- pause, go to reset
-                       when "001" => states <= "100";     -- reset, go to go.
-                       when others => states <= "010";  --start at pause.
+                       when "1000" => states <= "0100";	  -- go to pause
+                       when "0100" => states <= "0010";	  -- pause, go to reset
+                       when "0010" => states <= "0001";   -- reset, go to go.
+                       when "0001" => states <= "1000";   -- reset, go to go.
+                       when others => states <= "0100";  --start at reset.
                  end case;
 		    end if;
 		  
@@ -63,9 +65,10 @@ begin
 		    end if;
 		  
             --states <= "010";    
-            S1 <= states(0);
-            S2 <= states(1);
-            S3 <= states(2);
+            S1 <= states(3);
+            S2 <= states(2);
+            S3 <= states(1);
+            S4 <= states(0);
     end if;  
    
 

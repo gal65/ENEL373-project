@@ -35,7 +35,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity cntr_clk is
     Port ( Clk_in : in STD_LOGIC;
-           pause : in STD_LOGIC;
+           go : in STD_LOGIC;
            reset : in STD_LOGIC;
            clk_cnt : out STD_LOGIC_VECTOR (3 downto 0);
            shift : out STD_LOGIC);
@@ -52,7 +52,7 @@ count: process (Clk_in)
 begin
 
 
-    if rising_edge(Clk_in) and pause = '0' and reset = '0' then
+    if rising_edge(Clk_in) and go = '1' then
         counter := counter + "0001";
         shift <= '0';
         if counter = "1010" then
