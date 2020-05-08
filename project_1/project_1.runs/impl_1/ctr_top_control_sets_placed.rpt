@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Thu May  7 20:20:08 2020
+| Date         : Fri May  8 16:11:45 2020
 | Host         : DESKTOP-GSRJ7F3 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file ctr_top_control_sets_placed.rpt
 | Design       : ctr_top
@@ -58,10 +58,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              32 |           14 |
+| No           | No                    | No                     |              32 |           17 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              84 |           21 |
-| Yes          | No                    | No                     |               8 |            2 |
+| No           | Yes                   | No                     |              88 |           22 |
+| Yes          | No                    | No                     |               4 |            1 |
 | Yes          | No                    | Yes                    |              16 |            4 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -73,20 +73,20 @@ Table of Contents
 +------------------------+-----------------------------+---------------------------------------+------------------+----------------+
 |      Clock Signal      |        Enable Signal        |            Set/Reset Signal           | Slice Load Count | Bel Load Count |
 +------------------------+-----------------------------+---------------------------------------+------------------+----------------+
-|  CNT_1_SET/CLK         |                             |                                       |                1 |              1 |
 |  CNT_2_SET/shift_reg_0 |                             |                                       |                1 |              1 |
+|  CNT_1_SET/CLK         |                             |                                       |                1 |              1 |
 |  DIV_CNTR_SET/clk      |                             |                                       |                1 |              1 |
 |  CLK100MHZ_IBUF_BUFG   |                             |                                       |                3 |              3 |
-|  CNT_1_SET/CLK         | STATE_SET/S3                | STATE_SET/AR[0]                       |                1 |              4 |
 |  CNT_2_SET/shift_reg_0 | STATE_SET/S3                | STATE_SET/AR[0]                       |                1 |              4 |
+|  CNT_1_SET/CLK         | STATE_SET/S3                | STATE_SET/AR[0]                       |                1 |              4 |
 |  CNT_3_SET/shift_reg_0 | STATE_SET/S3                | STATE_SET/AR[0]                       |                1 |              4 |
 |  DIV_CLK_SET/CLK_BUFG  | STATE_SET/states[3]_i_1_n_0 |                                       |                1 |              4 |
 |  DIV_CNTR_SET/clk      | STATE_SET/S3                | STATE_SET/AR[0]                       |                1 |              4 |
-|  DIV_SECONDS_SET/CLK   | STATE_SET/E[0]              |                                       |                1 |              4 |
-|  DIV_CLK_SET/CLK_BUFG  |                             |                                       |                8 |             26 |
+|  DIV_SECONDS_SET/CLK   |                             | STATE_SET/SS[0]                       |                1 |              4 |
+|  DIV_CLK_SET/CLK_BUFG  |                             |                                       |               11 |             26 |
 |  CLK100MHZ_IBUF_BUFG   |                             | DIV_CLK_SET/clear                     |                7 |             28 |
-|  CLK100MHZ_IBUF_BUFG   |                             | DIV_CNTR_SET/clk_ctr[0]_i_1__1_n_0    |                7 |             28 |
-|  CLK100MHZ_IBUF_BUFG   |                             | DIV_SECONDS_SET/clk_ctr[0]_i_1__0_n_0 |                7 |             28 |
+|  CLK100MHZ_IBUF_BUFG   |                             | DIV_CNTR_SET/clk_ctr[0]_i_1__0_n_0    |                7 |             28 |
+|  CLK100MHZ_IBUF_BUFG   |                             | DIV_SECONDS_SET/clk_ctr[0]_i_1__1_n_0 |                7 |             28 |
 +------------------------+-----------------------------+---------------------------------------+------------------+----------------+
 
 

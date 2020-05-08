@@ -17,6 +17,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity BCD_to_7SEG is
 		   Port ( bcd_in: in std_logic_vector (3 downto 0);	-- Input BCD vector
 		          en: in std_logic;
+		          en2: in STD_LOGIC;
     			leds_out: out	std_logic_vector (1 to 7));		-- Output 7-Seg vector 
 end BCD_to_7SEG;
 
@@ -25,7 +26,7 @@ architecture Behavioral of BCD_to_7SEG is
 begin
 	my_seg_proc: process (bcd_in)		-- Enter this process whenever BCD input changes state
 		begin
-		  if en = '1' then
+		  if en = '1' or en2 = '1' then
 			case bcd_in is					 -- abcdefg segments
 				when "0000"	=> leds_out <= "0000001";	  -- if BCD is "0000" write a zero to display
 				when "0001"	=> leds_out <= "1001111";	  -- etc...

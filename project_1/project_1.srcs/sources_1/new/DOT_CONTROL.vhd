@@ -34,38 +34,31 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity dot_control is
     Port ( CLK : in STD_LOGIC;
            EN : in STD_LOGIC;
-           RST: in STD_LOGIC;
-           DEC_POS : out STD_LOGIC_VECTOR(2 downto 0);
-           finish : out STD_LOGIC);
+           DEC_POS : out STD_LOGIC_VECTOR(2 downto 0));
 end DOT_CONTROL;
 
 architecture Behavioral of DOT_CONTROL is
-    signal temp_dec_pos : STD_LOGIC_VECTOR(2 downto 0);
+    signal temp_dec_pos : STD_LOGIC_VECTOR(2 downto 0) := "000";
 begin
-    dot_process: process(CLK, RST)
+    dot_process: process(CLK, EN)
         begin
-            if EN = '1' then
-                --state resets  111, 
-                --next state is 011
-                -- then         001
-                --finally       000
-                if RST = '1' then
-                    temp_dec_pos <= "111";
-                end if;
-                
-                if CLK= '1' and CLK'Event then
+            
+        
+            if CLK= '1' and CLK'Event then
+                if EN = '1' then
                     case temp_dec_pos is	
-                        when "110"	=> temp_dec_pos <= "111"; 
-                                       finish <= '1';	
+                        when "000"	=> temp_dec_pos <= "100";	    
                         when "100"	=> temp_dec_pos <= "110";
-                                       finish <= '0';				 
-                        when "000"	=> temp_dec_pos <= "100";	
-                                       finish <= '0';                         
+                        when "110"	=> temp_dec_pos <= "111"; 
+                        when "111"	=> temp_dec_pos <= "000"; 	                        
                         when others => temp_dec_pos <= "000";
-                                       finish <= '0';
                     end case;   
+                else 
+                    temp_dec_pos <= "000";
                 end if;
              end if;  
+             
+                        
         end process dot_process;
         
     DEC_POS <= temp_dec_pos;

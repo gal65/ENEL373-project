@@ -86,14 +86,13 @@ architecture Behavioral of ctr_top is
     component DOT_CONTROL
         Port ( CLK : in STD_LOGIC;
            EN : in STD_LOGIC;
-           RST: in STD_LOGIC;
-           DEC_POS : out STD_LOGIC_VECTOR(2 downto 0);
-           FINISH: out STD_LOGIC);
+           DEC_POS : out STD_LOGIC_VECTOR(2 downto 0));
     end component;
     
     component BCD_to_7SEG
         port(bcd_in: in std_logic_vector (3 downto 0);	-- Input BCD vector
             en: in std_logic;
+            en2: in std_logic;
  			leds_out: out	std_logic_vector (1 to 7));
     end component;
     
@@ -123,12 +122,7 @@ architecture Behavioral of ctr_top is
            cntr_out: out std_logic_vector(3 downto 0);
            dec_point: out STD_LOGIC);
         end component;
-    
-    component button_toggle
-        Port ( button : in STD_LOGIC;
-           toggle : out STD_LOGIC);
-        end component;
-        
+           
     component state
     Port ( clk_in: in STD_LOGIC;
            change_state : in STD_LOGIC;
@@ -141,7 +135,7 @@ architecture Behavioral of ctr_top is
     component input_multiplexer is
     Port ( selector : in STD_LOGIC;
            button : in STD_LOGIC;
-           countdown : in STD_LOGIC;
+           countdown : in STD_LOGIC_vector(2 downto 0);
            change_state : out STD_LOGIC);
      end component;
     
@@ -156,9 +150,9 @@ begin
     --all digits
     
     
-    INPUT_MULTIPLEXER_SET: input_multiplexer port map(S2, BTNC, light_countdown, change_state);
+    INPUT_MULTIPLEXER_SET: input_multiplexer port map(S2, BTNC, Decimal_pos, change_state);
     --state switching, takes a single button input, and changes the state forward 1.
-    STATE_SET: state port map(clk_out_disp, BTNC, S1, S2, S3, S4);
+    STATE_SET: state port map(clk_out_disp, change_state, S1, S2, S3, S4);
     
     --TOGGLE_SET: button_toggle port map(SW(0), active);
     CNT_1_SET: cntr_clk port map(Clk_out_cntr, S3, S1, Cntr_1, ripple_1);
@@ -167,12 +161,12 @@ begin
     CNT_4_SET: cntr_clk port map(ripple_3, S3, S1, Cntr_4, ripple_4);
     
     --define the decimal position for countdown
-    DEC_POS_SET: dot_control port map(Clk_out_seconds, S2, S1, Decimal_pos, light_countdown);
+    DEC_POS_SET: dot_control port map(Clk_out_seconds, S2, Decimal_pos);
     
     MUX_SET: Multiplex port map(clk_out_disp, Cntr_1, Cntr_2, Cntr_3, Cntr_4, Decimal_pos, AN, Cntr_out, DP);
     
 
-    BCD_SET: BCD_to_7SEG port map(Cntr_out, S4,
+    BCD_SET: BCD_to_7SEG port map(Cntr_out, S4, S3,
                                         leds_out(1) => CA, 
                                         leds_out(2) => CB, 
                                         leds_out(3) => CC, 
