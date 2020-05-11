@@ -38,13 +38,13 @@ entity dot_control is
 end DOT_CONTROL;
 
 architecture Behavioral of DOT_CONTROL is
-    signal temp_dec_pos : STD_LOGIC_VECTOR(2 downto 0) := "000";
+    signal temp_dec_pos : STD_LOGIC_VECTOR(2 downto 0);
 begin
-    dot_process: process(CLK, EN)
+    dot_process: process(CLK)
         begin
             
         
-            if CLK= '1' and CLK'Event then
+            if rising_edge(CLK) then
                 if EN = '1' then
                     case temp_dec_pos is	
                         when "000"	=> temp_dec_pos <= "100";	    
@@ -53,14 +53,12 @@ begin
                         when "111"	=> temp_dec_pos <= "000"; 	                        
                         when others => temp_dec_pos <= "000";
                     end case;   
-                else 
-                    temp_dec_pos <= "000";
                 end if;
              end if;  
              
                         
         end process dot_process;
         
-    DEC_POS <= temp_dec_pos;
+    DEC_POS <= not temp_dec_pos;
     
 end Behavioral;

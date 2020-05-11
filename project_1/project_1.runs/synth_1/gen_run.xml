@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1588911037">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1589201854">
   <File Type="PA-TCL" Name="ctr_top.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="ctr_top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="ctr_top_reports.tcl"/>
@@ -46,6 +46,12 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/cntr_clk.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/counter.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>

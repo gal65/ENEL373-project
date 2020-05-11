@@ -79,9 +79,14 @@ architecture Behavioral of ctr_top is
     --decimal point state control
     signal Decimal_pos : std_logic_vector(2 downto 0);
     
+    --signal for the output of the countodwn clock
+    signal countdown_out : std_logic; 
+    
     constant clk_limit_disp : std_logic_vector(27 downto 0) := X"00061A8"; -- 500 Hz   "
     constant clk_limit_cntr : std_logic_vector(27 downto 0) := X"007A120"; -- 100 Hz   "
     constant clk_limit_seconds : std_logic_vector(27 downto 0) := X"0001388"; -- 1Hz   "
+    constant clk_limit_3_seconds : std_logic_vector(27 downto 0) := X"0000682"; -- 1Hz   "
+    
     
     component DOT_CONTROL
         Port ( CLK : in STD_LOGIC;
@@ -110,6 +115,13 @@ architecture Behavioral of ctr_top is
            shift : out STD_LOGIC);
     end component;
     
+    component counter
+    Port ( Clk : in STD_LOGIC;
+           Limit : in STD_LOGIC_vector(27 downto 0);
+           EN : in STD_LOGIC;
+           Output : out STD_LOGIC);
+    end component;
+    
   
     component Multiplex
         Port ( clk_in : in STD_LOGIC;
@@ -135,7 +147,7 @@ architecture Behavioral of ctr_top is
     component input_multiplexer is
     Port ( selector : in STD_LOGIC;
            button : in STD_LOGIC;
-           countdown : in STD_LOGIC_vector(2 downto 0);
+           countdown : in STD_LOGIC;
            change_state : out STD_LOGIC);
      end component;
     
@@ -149,10 +161,17 @@ begin
     DIV_SECONDS_SET: my_divider port map(CLK100MHZ, clk_limit_seconds, Clk_out_seconds);
     --all digits
     
+   
     
-    INPUT_MULTIPLEXER_SET: input_multiplexer port map(S2, BTNC, Decimal_pos, change_state);
-    --state switching, takes a single button input, and changes the state forward 1.
+    INPUT_MULTIPLEXER_SET: input_multiplexer port map(S2, BTNC, countdown_out, change_state);
+    
     STATE_SET: state port map(clk_out_disp, change_state, S1, S2, S3, S4);
+    
+    COUNTER_SET: counter port map(CLK100MHZ, clk_limit_3_seconds, S3, countdown_out);
+    
+   
+    --state switching, takes a single button input, and changes the state forward 1.
+    
     
     --TOGGLE_SET: button_toggle port map(SW(0), active);
     CNT_1_SET: cntr_clk port map(Clk_out_cntr, S3, S1, Cntr_1, ripple_1);

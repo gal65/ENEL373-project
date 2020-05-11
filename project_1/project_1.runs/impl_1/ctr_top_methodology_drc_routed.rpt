@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Fri May  8 16:12:15 2020
+| Date         : Tue May 12 00:59:24 2020
 | Host         : DESKTOP-GSRJ7F3 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file ctr_top_methodology_drc_routed.rpt -pb ctr_top_methodology_drc_routed.pb -rpx ctr_top_methodology_drc_routed.rpx
 | Design       : ctr_top

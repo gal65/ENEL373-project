@@ -34,33 +34,24 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity input_multiplexer is
     Port ( selector : in STD_LOGIC;
            button : in STD_LOGIC;
-           countdown : in STD_LOGIC_VECTOR(2 downto 0);
+           countdown : in STD_LOGIC;
            change_state : out STD_LOGIC);
 end input_multiplexer;
 
 architecture Behavioral of input_multiplexer is
-
-
-
-
 begin
 
-
-
-select_input: process(button, countdown)
-    variable prev_state: STD_LOGIC;
-    variable temp_output: std_logic;
+process(selector, button, countdown)
 begin
+
+if selector = not '1' then
+    change_state <= button;
+end if;
+if selector = not '0' then
+    change_state <= countdown;
+end if;
     
-    if selector = '1' then
-        temp_output := countdown(0);
-    else
-        temp_output := button;
-    end if;
 
-    change_state <= temp_output;
-end process select_input;
-
-
+end process;
 
 end Behavioral;
