@@ -84,14 +84,15 @@ architecture Behavioral of ctr_top is
     
     constant clk_limit_disp : std_logic_vector(27 downto 0) := X"00061A8"; -- 500 Hz   "
     constant clk_limit_cntr : std_logic_vector(27 downto 0) := X"007A120"; -- 100 Hz   "
-    constant clk_limit_seconds : std_logic_vector(27 downto 0) := X"0001388"; -- 1Hz   "
-    constant clk_limit_3_seconds : std_logic_vector(27 downto 0) := X"0000682"; -- 1Hz   "
+    constant clk_limit_seconds : std_logic_vector(27 downto 0) := X"2FAF07E"; -- 1Hz   "
+    --constant clk_limit_3_seconds : std_logic_vector(27 downto 0) := ; -- 1Hz   "
     
     
     component DOT_CONTROL
         Port ( CLK : in STD_LOGIC;
            EN : in STD_LOGIC;
-           DEC_POS : out STD_LOGIC_VECTOR(2 downto 0));
+           DEC_POS : out STD_LOGIC_VECTOR(2 downto 0);
+           OUTPUT : out STD_LOGIC);
     end component;
     
     component BCD_to_7SEG
@@ -130,6 +131,7 @@ architecture Behavioral of ctr_top is
            cntr_3 : in std_logic_vector(3 downto 0);
            cntr_4 : in std_logic_vector(3 downto 0);
            dec_pos : in std_logic_vector(2 downto 0);
+           en_dec : in std_logic;
            disp : out unsigned (7 downto 0);
            cntr_out: out std_logic_vector(3 downto 0);
            dec_point: out STD_LOGIC);
@@ -166,9 +168,7 @@ begin
     INPUT_MULTIPLEXER_SET: input_multiplexer port map(S2, BTNC, countdown_out, change_state);
     
     STATE_SET: state port map(clk_out_disp, change_state, S1, S2, S3, S4);
-    
-    COUNTER_SET: counter port map(CLK100MHZ, clk_limit_3_seconds, S3, countdown_out);
-    
+       
    
     --state switching, takes a single button input, and changes the state forward 1.
     
@@ -180,9 +180,9 @@ begin
     CNT_4_SET: cntr_clk port map(ripple_3, S3, S1, Cntr_4, ripple_4);
     
     --define the decimal position for countdown
-    DEC_POS_SET: dot_control port map(Clk_out_seconds, S2, Decimal_pos);
+    DEC_POS_SET: dot_control port map(Clk_out_seconds, S2, Decimal_pos, countdown_out);
     
-    MUX_SET: Multiplex port map(clk_out_disp, Cntr_1, Cntr_2, Cntr_3, Cntr_4, Decimal_pos, AN, Cntr_out, DP);
+    MUX_SET: Multiplex port map(clk_out_disp, Cntr_1, Cntr_2, Cntr_3, Cntr_4, Decimal_pos, S2, AN, Cntr_out, DP);
     
 
     BCD_SET: BCD_to_7SEG port map(Cntr_out, S4, S3,

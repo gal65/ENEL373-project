@@ -18,6 +18,7 @@ proc create_report { reportName command } {
   }
 }
 set_param chipscope.maxJobs 1
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a100tcsg324-3
 
 set_param project.singleFileAddWarning.threshold 0
@@ -36,7 +37,6 @@ read_vhdl -library xil_defaultlib {
   {C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/State_source.vhd}
   {C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/imports/VHDL Code/Steves_clock_divider.vhd}
   {C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/cntr_clk.vhd}
-  {C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/counter.vhd}
   {C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/input_multiplexer.vhd}
   {C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/ctr_top.vhd}
 }

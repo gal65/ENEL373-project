@@ -34,7 +34,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity dot_control is
     Port ( CLK : in STD_LOGIC;
            EN : in STD_LOGIC;
-           DEC_POS : out STD_LOGIC_VECTOR(2 downto 0));
+           DEC_POS : out STD_LOGIC_VECTOR(2 downto 0);
+           OUTPUT : out STD_LOGIC);
 end DOT_CONTROL;
 
 architecture Behavioral of DOT_CONTROL is
@@ -47,18 +48,26 @@ begin
             if rising_edge(CLK) then
                 if EN = '1' then
                     case temp_dec_pos is	
-                        when "000"	=> temp_dec_pos <= "100";	    
+                        when "000"	=> temp_dec_pos <= "100";	
+                            output <= '0';	    
                         when "100"	=> temp_dec_pos <= "110";
+                            output <= '0';	
                         when "110"	=> temp_dec_pos <= "111"; 
-                        when "111"	=> temp_dec_pos <= "000"; 	                        
+                            output <= '1';	
+                        when "111"	=> temp_dec_pos <= "000"; 
+                            output <= '0';	                        
                         when others => temp_dec_pos <= "000";
+                            output <= '0';	
                     end case;   
+                else
+                    temp_dec_pos <= "111";
+                    output <= '0';	
                 end if;
              end if;  
              
                         
         end process dot_process;
         
-    DEC_POS <= not temp_dec_pos;
+    DEC_POS <= temp_dec_pos;
     
 end Behavioral;

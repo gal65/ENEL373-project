@@ -52,18 +52,26 @@ begin
     if Clk = '1' and Clk'Event then
         --if enable is off, reset the clock, go set output to low.
         --if the count is greater than the limit, set out to high
-
-        if count = Limit then
-            buff <= not buff;
+        
+        if EN = '0' then
+            Buff <= '0';
             count <= X"0000000";
-        else
-            count <= count + X"0000001";
         end if;
-   
+        
+        if EN = '1' then
+            if count = Limit then
+                Buff <= '1';
+                count <= X"0000000";
+            else
+                count <= count + X"0000001";
+            end if;
+        end if;
+        
+        counter <= count;
+        Output <= Buff;
     end if;
 end process countUp;
 
-Output <= buff;
-counter <= count;
+
 
 end Behavioral;

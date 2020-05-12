@@ -42,7 +42,7 @@ architecture tb of counter_tb is
            signal Output : STD_LOGIC;
            signal counter : STD_LOGIC_vector(27 downto 0);
 begin
-    UUT : entity work.counter port map(Clk => Clk, Limit => Limit, EN => EN, Output => output);
+    UUT : entity work.counter port map(Clk => Clk, Limit => Limit, EN => EN, counter => counter, Output => output);
     --inputs
     -- limit is constant at X"0000682"
     process 
@@ -56,8 +56,8 @@ begin
    
     end process;
     
-    Limit <= X"0000682";
-    EN <= '1';
+    Limit <= X"0003A98";
+    EN <= '1', '0' after 310 us;
     
     
 end tb;

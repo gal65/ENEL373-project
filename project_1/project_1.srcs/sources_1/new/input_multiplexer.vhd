@@ -44,11 +44,11 @@ begin
 process(selector, button, countdown)
 begin
 
-if selector = not '1' then
+if selector = '0' then
     change_state <= button;
 end if;
-if selector = not '0' then
-    change_state <= countdown;
+if selector = '1' then
+    change_state <= not countdown;
 end if;
     
 

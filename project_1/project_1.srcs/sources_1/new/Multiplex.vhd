@@ -40,6 +40,7 @@ entity Multiplex is
            cntr_3 : in std_logic_vector(3 downto 0);
            cntr_4 : in std_logic_vector(3 downto 0);
            dec_pos : in std_logic_vector(2 downto 0);
+           en_dec : in std_logic;
            disp : out unsigned (7 downto 0);
            cntr_out: out std_logic_vector(3 downto 0);
            dec_point: out STD_LOGIC);
@@ -48,7 +49,7 @@ end Multiplex;
 
 architecture Behavioral of Multiplex is
     signal temp:   unsigned (7 downto 0) := "11111110";
-
+    signal dec_pos_buffer: STD_logic_vector(2 downto 0);
 begin
 shift: process (clk_in)
 begin
@@ -57,14 +58,21 @@ begin
         temp <= unsigned (to_stdlogicvector(to_bitvector(std_logic_vector(temp)) rol 1));
         disp <= temp;
         
+        if en_dec = '1' then
+            dec_pos_buffer <= dec_pos;
+        else
+            dec_pos_buffer <= "111";
+        end if;
+        
+        
         --cases for which number is displayed\
         case temp is					 -- abcdefg segments
 				when "11111110"	=> cntr_out <= cntr_1;
-				                   dec_point <= dec_pos(2);	  -- if BCD is "0000" write a zero to display
+				                   dec_point <= dec_pos_buffer(0);	  -- if BCD is "0000" write a zero to display
 				when "11111101"	=> cntr_out <= cntr_2;	  -- etc...
-				                   dec_point <= dec_pos(1);
+				                   dec_point <= dec_pos_buffer(1);
 				when "11111011"	=> cntr_out <= cntr_3; 
-				                   dec_point <= dec_pos(0);   --decimal point here
+				                   dec_point <= dec_pos_buffer(2);   --decimal point here
 				when "11110111"	=> cntr_out <= cntr_4;
 				                   dec_point <= '1';
 				when others => cntr_out <= "0000";
