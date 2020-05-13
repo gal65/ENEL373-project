@@ -2,22 +2,16 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Wed May 13 13:25:41 2020
-# Process ID: 15552
+# Start of session at: Wed May 13 16:19:14 2020
+# Process ID: 3556
 # Current directory: C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent976 C:\Users\Jarrod\OneDrive - University of Canterbury\UC 2020\ENEL373\Project\rxnmongroup4\project_1\project_1.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent19276 C:\Users\Jarrod\OneDrive - University of Canterbury\UC 2020\ENEL373\Project\rxnmongroup4\project_1\project_1.xpr
 # Log file: C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1/vivado.log
 # Journal file: C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project {C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1/project_1.xpr}
 update_compile_order -fileset sources_1
-launch_simulation
-source Display_tb.tcl
-run all
-relaunch_sim
-run all
-close_sim
 # Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
 set_property source_mgmt_mode None [current_project]
 set_property top Quad_4_bit_counter_TB [get_filesets sim_1]
@@ -28,132 +22,30 @@ update_compile_order -fileset sim_1
 launch_simulation
 source Quad_4_bit_counter_TB.tcl
 run all
-relaunch_sim
-run all
-relaunch_sim
-run all
-relaunch_sim
-run all
-relaunch_sim
-run all
-relaunch_sim
-run all
-run all
-run all
-relaunch_sim
-run all
-relaunch_sim
-update_compile_order -fileset sources_1
-run all
-run all
-relaunch_sim
-run all
-relaunch_sim
-run all
-relaunch_sim
-run all
 close_sim
-update_compile_order -fileset sources_1
 launch_simulation
 source Quad_4_bit_counter_TB.tcl
 run all
-relaunch_sim
 run all
-relaunch_sim
 run all
-relaunch_sim
 run all
-relaunch_sim
 run all
-relaunch_sim
 run all
-relaunch_sim
 run all
-run 50 ms
-relaunch_sim
-run all
-relaunch_sim
-run all
-run 50 ms
-relaunch_sim
-run all
-run 50 ms
-relaunch_sim
-run all
-run 50 ms
-relaunch_sim
-run all
-relaunch_sim
-run all
-run 50 ms
-relaunch_sim
-run all
-relaunch_sim
-run all
-run 50 ms
-relaunch_sim
+restart
 run all
 run 2 ms
-relaunch_sim
-run all
-run 2 ms
-run all
-run 2 ms
-run 2 ms
-run all
-relaunch_sim
-run 2 ms
+restart
 run 2 ms
 relaunch_sim
-run all
 run 2 ms
 relaunch_sim
+run 4 us
+run 4 us
+run 4 us
+run 4 us
+run 4 us
+run 4 us
 run all
-run 2 ms
-update_compile_order -fileset sources_1
-relaunch_sim
-run all
-update_compile_order -fileset sources_1
-run 2 ms
-relaunch_sim
-run all
-run 2 ms
-relaunch_sim
-run all
-run 2 ms
-relaunch_sim
-run all
-relaunch_sim
-run all
-run 2 ms
-relaunch_sim
-run all
-relaunch_sim
-run all
-run 2 ms
-relaunch_sim
-run all
-relaunch_sim
-run all
-run 2 ms
-relaunch_sim
-run all
-relaunch_sim
-run all
-run 2 ms
-run 6 ms
-relaunch_sim
-run all
-run 6 ms
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top Display_tb [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sim_1
-launch_simulation
 close_sim
-launch_simulation
-source Display_tb.tcl
-close_sim
+update_compile_order -fileset sources_1

@@ -54,13 +54,10 @@ architecture Behavioral of ctr_top is
     signal Clk_out_seconds:  STD_LOGIC;
     
     signal Cntr_1 : std_logic_vector (0 to 3);
-    signal ripple_1 : STD_LOGIC;
     signal Cntr_2 : std_logic_vector (0 to 3);
-    signal ripple_2 : STD_LOGIC;
     signal Cntr_3 : std_logic_vector (0 to 3);
-    signal ripple_3 : STD_LOGIC;
     signal Cntr_4 : std_logic_vector (0 to 3);
-    signal ripple_4 : STD_LOGIC;
+    signal carry: std_logic;
     
     signal Cntr_out: std_logic_vector (0 to 3);
     signal active : STD_LOGIC;
@@ -108,13 +105,15 @@ architecture Behavioral of ctr_top is
              Clk_out : out  STD_LOGIC);
     end component;
     
-    component cntr_clk
-        port( Clk_in : in STD_LOGIC;
-           carry_in: in STD_LOGIC;
-           go : in STD_LOGIC;
-           reset: in STD_LOGIC;
-           clk_cnt : out STD_LOGIC_VECTOR (3 downto 0);
-           shift : out STD_LOGIC);
+    component quad_counter
+    Port ( CLK_IN : in STD_LOGIC;
+           EN : in STD_LOGIC;
+           RESET : in STD_LOGIC;
+           CNTR1 : out STD_LOGIC_VECTOR (3 downto 0);
+           CNTR2 : out STD_LOGIC_VECTOR (3 downto 0);
+           CNTR3 : out STD_LOGIC_VECTOR (3 downto 0);
+           CNTR4 : out STD_LOGIC_VECTOR (3 downto 0);
+           OVERFLOW : OUT STD_LOGIC);
     end component;
     
     component counter
@@ -175,10 +174,7 @@ begin
     
     
     --TOGGLE_SET: button_toggle port map(SW(0), active);
-    CNT_1_SET: cntr_clk port map(Clk_out_cntr, '1', S3, S1, Cntr_1, ripple_1); -- counts based on clock signal
-    CNT_2_SET: cntr_clk port map(Clk_out_cntr, ripple_1, S3, S1, Cntr_2, ripple_2);
-    CNT_3_SET: cntr_clk port map(Clk_out_cntr, ripple_2, S3, S1, Cntr_3, ripple_3);
-    CNT_4_SET: cntr_clk port map(Clk_out_cntr, ripple_3, S3, S1, Cntr_4, ripple_4);
+    DEC_COUNT: quad_counter port map(Clk_out_cntr, S1, S3, Cntr_1, Cntr_2, Cntr_3, Cntr_4, carry); -- counts based on clock signal
     
     --define the decimal position for countdown
     DEC_POS_SET: dot_control port map(Clk_out_seconds, S2, Decimal_pos, countdown_out);

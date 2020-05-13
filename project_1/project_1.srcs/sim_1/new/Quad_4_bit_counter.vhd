@@ -43,34 +43,30 @@ end Quad_4_bit_counter;
 
 architecture Behavioral of Quad_4_bit_counter is
     signal Cntr_1 : std_logic_vector (0 to 3);
-    signal ripple_1 : STD_LOGIC;
     signal Cntr_2 : std_logic_vector (0 to 3);
-    signal ripple_2 : STD_LOGIC;
     signal Cntr_3 : std_logic_vector (0 to 3);
-    signal ripple_3 : STD_LOGIC;
     signal Cntr_4 : std_logic_vector (0 to 3);
-    signal ripple_4 : STD_LOGIC;
+    signal carry: std_logic;
     
-    component cntr_clk
-    port( Clk_in : in STD_LOGIC;
-           carry_in: in STD_LOGIC;
-           go : in STD_LOGIC;
-           reset: in STD_LOGIC;
-           clk_cnt : out STD_LOGIC_VECTOR (3 downto 0);
-           shift : out STD_LOGIC);
+    component quad_counter
+    Port ( CLK_IN : in STD_LOGIC;
+           EN : in STD_LOGIC;
+           RESET : in STD_LOGIC;
+           CNTR1 : out STD_LOGIC_VECTOR (3 downto 0);
+           CNTR2 : out STD_LOGIC_VECTOR (3 downto 0);
+           CNTR3 : out STD_LOGIC_VECTOR (3 downto 0);
+           CNTR4 : out STD_LOGIC_VECTOR (3 downto 0);
+           OVERFLOW : OUT STD_LOGIC);
     end component;
     
     
 begin
 
-    CNT_1_SET: cntr_clk port map(clk_in_ctr, '1', EN, R_SET, Cntr_1, ripple_1);
-    CNT_2_SET: cntr_clk port map(clk_in_ctr, ripple_1, EN, R_SET, Cntr_2, ripple_2);
-    CNT_3_SET: cntr_clk port map(clk_in_ctr, ripple_2, EN, R_SET, Cntr_3, ripple_3);
-    CNT_4_SET: cntr_clk port map(clk_in_ctr, ripple_3, EN, R_SET, Cntr_4, ripple_4);
+    COUNTER: quad_counter port map(clk_in_ctr, EN, R_SET, Cntr_1, Cntr_2, Cntr_3, Cntr_4, carry);
     
     stage_1_q_out <= Cntr_1;
     stage_2_q_out <= Cntr_2;
     stage_3_q_out <= Cntr_3;
     stage_4_q_out <= Cntr_4;
-    overflow <= ripple_4;
+    overflow <= carry;
 end Behavioral;

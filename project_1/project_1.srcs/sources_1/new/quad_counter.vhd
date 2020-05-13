@@ -52,16 +52,15 @@ begin
         
 count : process(CLK_IN, RESET) 
 
-variable counter1 : STD_LOGIC_VECTOR (3 downto 0);
-variable counter2 : STD_LOGIC_VECTOR (3 downto 0);
-variable counter3 : STD_LOGIC_VECTOR (3 downto 0);
-variable counter4 : STD_LOGIC_VECTOR (3 downto 0);
+variable counter1 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
+variable counter2 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
+variable counter3 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
+variable counter4 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
 
 begin
         
     if falling_edge(Clk_in) and EN = '1' then   
-
-        counter1 := counter1 + "0001";
+        counter1 := counter1 + "0001"; 
         if counter1 = "1010" then
             counter1 := "0000";
             --add to the next counter
@@ -80,7 +79,7 @@ begin
                     end if;
                 end if;
             end if;         
-        end if;        
+        end if;       
     end if;
 
     if RESET = '1' then
@@ -90,8 +89,13 @@ begin
         counter1 := "0000";
         OVERFLOW <= '0';
     end if;
-
-
+    
+    CNTR1 <= counter1;
+    CNTR2 <= counter2;
+    CNTR3 <= counter3;
+    CNTR4 <= counter4;
+    
+    
 end process count;
 
 

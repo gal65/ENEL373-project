@@ -4,10 +4,11 @@ Nov  6 2019
 21:57:16
 C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1/project_1.srcs/sim_1/new/Display_Wrapper.vhd,1589332811,vhdl,,,,display_wrapper,,,,,,,,
 C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1/project_1.srcs/sim_1/new/Display_tb.vhd,1589321221,vhdl,,,,display_tb,,,,,,,,
-C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1/project_1.srcs/sim_1/new/Quad_4_bit_counter.vhd,1589339888,vhdl,,,,quad_4_bit_counter,,,,,,,,
+C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1/project_1.srcs/sim_1/new/Quad_4_bit_counter.vhd,1589351109,vhdl,,,,quad_4_bit_counter,,,,,,,,
 C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1/project_1.srcs/sim_1/new/Quad_4_bit_counter_tb.vhd,1589321252,vhdl,,,,quad_4_bit_counter_tb,,,,,,,,
 C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1/project_1.srcs/sources_1/imports/VHDL Code/BCD_to_7SEG.vhd,1589319796,vhdl,,,,bcd_to_7seg,,,,,,,,
 C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1/project_1.srcs/sources_1/new/Multiplex.vhd,1589319796,vhdl,,,,multiplex,,,,,,,,
 C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1/project_1.srcs/sources_1/new/cntr_clk.vhd,1589340335,vhdl,,,,cntr_clk,,,,,,,,
 C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1/project_1.srcs/sources_1/new/counter.vhd,1589319796,vhdl,C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1/project_1.srcs/sources_1/new/counter_tb.vhd,,,counter,,,,,,,,
 C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1/project_1.srcs/sources_1/new/counter_tb.vhd,1589319796,vhdl,,,,counter_tb,,,,,,,,
+C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1/project_1.srcs/sources_1/new/quad_counter.vhd,1589352192,vhdl,,,,quad_counter,,,,,,,,
