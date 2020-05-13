@@ -35,6 +35,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity cntr_clk is
     Port ( Clk_in : in STD_LOGIC;
+           carry_in: in STD_LOGIC; -- Added a carry in signal so that the counter is synchronous
            go : in STD_LOGIC;
            reset : in STD_LOGIC;
            clk_cnt : out STD_LOGIC_VECTOR (3 downto 0);
@@ -44,28 +45,30 @@ end cntr_clk;
 
 
 architecture Behavioral of cntr_clk is
+signal carry_out: STD_LOGIC := '0';
 
 begin
 
-count: process (Clk_in)
-    variable counter: std_logic_vector (3 downto 0);
+count: process (Clk_in, carry_in, reset)
+    variable counter: std_logic_vector (3 downto 0) := "0000";
 begin
-
-
-    if rising_edge(Clk_in) and go = '1' then
-        counter := counter + "0001";
-        shift <= '0';
-        if counter = "1010" then
-            shift <= '1';
-            counter := "0000";
+    if falling_edge(Clk_in) and go = '1' then   
+        if carry_in = '1' then
+            counter := counter + "0001";
+            if counter = "1010" then
+                counter := "0000";
+                carry_out <= '1';
+            else
+                carry_out <= '0';
+            end if;
         end if;               
     end if;
-    
-    
-    
+
     if reset = '1' then
         counter := "0000";
     end if;
+    
+    shift <= carry_out;
     clk_cnt <= counter;
     
 end process;

@@ -110,6 +110,7 @@ architecture Behavioral of ctr_top is
     
     component cntr_clk
         port( Clk_in : in STD_LOGIC;
+           carry_in: in STD_LOGIC;
            go : in STD_LOGIC;
            reset: in STD_LOGIC;
            clk_cnt : out STD_LOGIC_VECTOR (3 downto 0);
@@ -174,10 +175,10 @@ begin
     
     
     --TOGGLE_SET: button_toggle port map(SW(0), active);
-    CNT_1_SET: cntr_clk port map(Clk_out_cntr, S3, S1, Cntr_1, ripple_1);
-    CNT_2_SET: cntr_clk port map(ripple_1, S3, S1, Cntr_2, ripple_2);
-    CNT_3_SET: cntr_clk port map(ripple_2, S3, S1, Cntr_3, ripple_3);
-    CNT_4_SET: cntr_clk port map(ripple_3, S3, S1, Cntr_4, ripple_4);
+    CNT_1_SET: cntr_clk port map(Clk_out_cntr, '1', S3, S1, Cntr_1, ripple_1); -- counts based on clock signal
+    CNT_2_SET: cntr_clk port map(Clk_out_cntr, ripple_1, S3, S1, Cntr_2, ripple_2);
+    CNT_3_SET: cntr_clk port map(Clk_out_cntr, ripple_2, S3, S1, Cntr_3, ripple_3);
+    CNT_4_SET: cntr_clk port map(Clk_out_cntr, ripple_3, S3, S1, Cntr_4, ripple_4);
     
     --define the decimal position for countdown
     DEC_POS_SET: dot_control port map(Clk_out_seconds, S2, Decimal_pos, countdown_out);

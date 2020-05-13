@@ -1,0 +1,9 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../project_1.srcs/sources_1/imports/VHDL Code/BCD_to_7SEG.vhd" \
+"../../../../project_1.srcs/sim_1/new/Display_Wrapper.vhd" \
+"../../../../project_1.srcs/sources_1/new/Multiplex.vhd" \
+"../../../../project_1.srcs/sim_1/new/Display_tb.vhd" \
+
+# Do not sort compile order
+nosort
