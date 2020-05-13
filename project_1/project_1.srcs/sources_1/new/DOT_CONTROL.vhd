@@ -21,6 +21,8 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -54,13 +56,13 @@ begin
                             output <= '0';	
                         when "110"	=> temp_dec_pos <= "111"; 
                             output <= '1';	
-                        when "111"	=> temp_dec_pos <= "000"; 
+                        when "111"	=> temp_dec_pos <= "111"; 
                             output <= '0';	                        
                         when others => temp_dec_pos <= "000";
                             output <= '0';	
                     end case;   
                 else
-                    temp_dec_pos <= "111";
+                    temp_dec_pos <= "000";
                     output <= '0';	
                 end if;
              end if;  
