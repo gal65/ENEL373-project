@@ -168,13 +168,17 @@ begin
     INPUT_MULTIPLEXER_SET: input_multiplexer port map(S2, BTNC, countdown_out, change_state);
     
     STATE_SET: state port map(clk_out_disp, change_state, S1, S2, S3, S4);
-       
+      --states description:
+      --s1: off state
+      --s2: light count down
+      --s3: timer go
+      --s4: timer pause to display time
    
     --state switching, takes a single button input, and changes the state forward 1.
     
     
     --TOGGLE_SET: button_toggle port map(SW(0), active);
-    DEC_COUNT: quad_counter port map(Clk_out_cntr, S1, S3, Cntr_1, Cntr_2, Cntr_3, Cntr_4, carry); -- counts based on clock signal
+    DEC_COUNT: quad_counter port map(Clk_out_cntr, S3, S1, Cntr_1, Cntr_2, Cntr_3, Cntr_4, carry); -- counts based on clock signal
     
     --define the decimal position for countdown
     DEC_POS_SET: dot_control port map(Clk_out_seconds, S2, Decimal_pos, countdown_out);

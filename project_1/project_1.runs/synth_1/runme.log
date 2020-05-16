@@ -1,0 +1,426 @@
+
+*** Running vivado
+    with args -log ctr_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ctr_top.tcl
+
+
+****** Vivado v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source ctr_top.tcl -notrace
+Command: synth_design -top ctr_top -part xc7a100tcsg324-3
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-3
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 1088 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 965.051 ; gain = 233.574
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'ctr_top' [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/ctr_top.vhd:50]
+INFO: [Synth 8-3491] module 'my_divider' declared at 'C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/imports/VHDL Code/Steves_clock_divider.vhd:36' bound to instance 'DIV_CLK_SET' of component 'my_divider' [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/ctr_top.vhd:161]
+INFO: [Synth 8-638] synthesizing module 'my_divider' [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/imports/VHDL Code/Steves_clock_divider.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'my_divider' (1#1) [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/imports/VHDL Code/Steves_clock_divider.vhd:44]
+INFO: [Synth 8-3491] module 'my_divider' declared at 'C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/imports/VHDL Code/Steves_clock_divider.vhd:36' bound to instance 'DIV_CNTR_SET' of component 'my_divider' [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/ctr_top.vhd:162]
+INFO: [Synth 8-3491] module 'my_divider' declared at 'C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/imports/VHDL Code/Steves_clock_divider.vhd:36' bound to instance 'DIV_SECONDS_SET' of component 'my_divider' [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/ctr_top.vhd:163]
+INFO: [Synth 8-3491] module 'input_multiplexer' declared at 'C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/input_multiplexer.vhd:34' bound to instance 'INPUT_MULTIPLEXER_SET' of component 'input_multiplexer' [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/ctr_top.vhd:168]
+INFO: [Synth 8-638] synthesizing module 'input_multiplexer' [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/input_multiplexer.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'input_multiplexer' (2#1) [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/input_multiplexer.vhd:41]
+INFO: [Synth 8-3491] module 'state' declared at 'C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/State_source.vhd:35' bound to instance 'STATE_SET' of component 'state' [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/ctr_top.vhd:170]
+INFO: [Synth 8-638] synthesizing module 'state' [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/State_source.vhd:45]
+INFO: [Synth 8-256] done synthesizing module 'state' (3#1) [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/State_source.vhd:45]
+INFO: [Synth 8-3491] module 'quad_counter' declared at 'C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/quad_counter.vhd:36' bound to instance 'DEC_COUNT' of component 'quad_counter' [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/ctr_top.vhd:177]
+INFO: [Synth 8-638] synthesizing module 'quad_counter' [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/quad_counter.vhd:47]
+WARNING: [Synth 8-614] signal 'EN' is read in the process but is not in the sensitivity list [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/quad_counter.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'quad_counter' (4#1) [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/quad_counter.vhd:47]
+INFO: [Synth 8-3491] module 'dot_control' declared at 'C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/DOT_CONTROL.vhd:36' bound to instance 'DEC_POS_SET' of component 'DOT_CONTROL' [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/ctr_top.vhd:180]
+INFO: [Synth 8-638] synthesizing module 'dot_control' [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/DOT_CONTROL.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'dot_control' (5#1) [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/DOT_CONTROL.vhd:43]
+INFO: [Synth 8-3491] module 'Multiplex' declared at 'C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/Multiplex.vhd:36' bound to instance 'MUX_SET' of component 'Multiplex' [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/ctr_top.vhd:182]
+INFO: [Synth 8-638] synthesizing module 'Multiplex' [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/Multiplex.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'Multiplex' (6#1) [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/Multiplex.vhd:50]
+INFO: [Synth 8-3491] module 'BCD_to_7SEG' declared at 'C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/imports/VHDL Code/BCD_to_7SEG.vhd:17' bound to instance 'BCD_SET' of component 'BCD_to_7SEG' [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/ctr_top.vhd:185]
+INFO: [Synth 8-638] synthesizing module 'BCD_to_7SEG' [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/imports/VHDL Code/BCD_to_7SEG.vhd:24]
+WARNING: [Synth 8-614] signal 'en' is read in the process but is not in the sensitivity list [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/imports/VHDL Code/BCD_to_7SEG.vhd:27]
+WARNING: [Synth 8-614] signal 'en2' is read in the process but is not in the sensitivity list [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/imports/VHDL Code/BCD_to_7SEG.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'BCD_to_7SEG' (7#1) [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/imports/VHDL Code/BCD_to_7SEG.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'ctr_top' (8#1) [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/ctr_top.vhd:50]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[15]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[14]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[13]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[12]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[11]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[10]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[9]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[8]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[7]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[6]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[5]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[4]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[3]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[2]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[1]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1038.496 ; gain = 307.020
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1038.496 ; gain = 307.020
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1038.496 ; gain = 307.020
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1038.496 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/constrs_1/imports/VHDL Code/Nexys4DDR_Master.xdc]
+Finished Parsing XDC File [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/constrs_1/imports/VHDL Code/Nexys4DDR_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/constrs_1/imports/VHDL Code/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/ctr_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/ctr_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1135.445 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1135.445 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1135.445 ; gain = 403.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-3
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1135.445 ; gain = 403.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1135.445 ; gain = 403.969
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'states_reg' in module 'state'
+INFO: [Synth 8-5544] ROM "states" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'temp_dec_pos_reg' in module 'dot_control'
+INFO: [Synth 8-5544] ROM "temp_dec_pos" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+WARNING: [Synth 8-327] inferring latch for variable 'change_state_reg' [C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.srcs/sources_1/new/input_multiplexer.vhd:48]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                 iSTATE0 |                             0100 |                             0100
+                 iSTATE1 |                             0010 |                             0010
+                 iSTATE2 |                             0001 |                             0001
+                  iSTATE |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'states_reg' in module 'state'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                             0001 |                              000
+                 iSTATE0 |                             0010 |                              100
+                 iSTATE1 |                             0100 |                              110
+                 iSTATE2 |                             1000 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'temp_dec_pos_reg' using encoding 'one-hot' in module 'dot_control'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1135.445 ; gain = 403.969
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 8     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 5     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 11    
++---Muxes : 
+	  12 Input      7 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 2     
+	   4 Input      4 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module my_divider 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module input_multiplexer 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module state 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   5 Input      4 Bit        Muxes := 1     
+Module quad_counter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 8     
++---Registers : 
+	                4 Bit    Registers := 4     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+Module dot_control 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   4 Input      4 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+Module Multiplex 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module BCD_to_7SEG 
+Detailed RTL Component Info : 
++---Muxes : 
+	  12 Input      7 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[15]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[14]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[13]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[12]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[11]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[10]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[9]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[8]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[7]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[6]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[5]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[4]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[3]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[2]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[1]
+WARNING: [Synth 8-3331] design ctr_top has unconnected port SW[0]
+WARNING: [Synth 8-3332] Sequential element (INPUT_MULTIPLEXER_SET/change_state_reg) is unused and will be removed from module ctr_top.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1135.445 ; gain = 403.969
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1135.445 ; gain = 403.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1138.836 ; gain = 407.359
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1140.109 ; gain = 408.633
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1145.957 ; gain = 414.480
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1145.957 ; gain = 414.480
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1145.957 ; gain = 414.480
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1145.957 ; gain = 414.480
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1145.957 ; gain = 414.480
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1145.957 ; gain = 414.480
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |    21|
+|3     |LUT1   |     8|
+|4     |LUT2   |     5|
+|5     |LUT3   |     6|
+|6     |LUT4   |    22|
+|7     |LUT5   |     9|
+|8     |LUT6   |    28|
+|9     |FDCE   |     4|
+|10    |FDRE   |   136|
+|11    |FDSE   |     1|
+|12    |IBUF   |     2|
+|13    |OBUF   |    16|
++------+-------+------+
+
+Report Instance Areas: 
++------+------------------+-------------+------+
+|      |Instance          |Module       |Cells |
++------+------------------+-------------+------+
+|1     |top               |             |   260|
+|2     |  DEC_COUNT       |quad_counter |    43|
+|3     |  DEC_POS_SET     |dot_control  |     6|
+|4     |  DIV_CLK_SET     |my_divider   |    44|
+|5     |  DIV_CNTR_SET    |my_divider_0 |    44|
+|6     |  DIV_SECONDS_SET |my_divider_1 |    44|
+|7     |  MUX_SET         |Multiplex    |    43|
+|8     |  STATE_SET       |state        |    16|
++------+------------------+-------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1145.957 ; gain = 414.480
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 18 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 1145.957 ; gain = 317.531
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1145.957 ; gain = 414.480
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1158.020 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 21 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1160.449 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+43 Infos, 37 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1160.449 ; gain = 736.695
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1160.449 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1/project_1.runs/synth_1/ctr_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file ctr_top_utilization_synth.rpt -pb ctr_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat May 16 16:03:08 2020...
