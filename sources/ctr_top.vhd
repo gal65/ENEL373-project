@@ -80,7 +80,7 @@ architecture Behavioral of ctr_top is
     signal countdown_out : std_logic; 
     
     constant clk_limit_disp : std_logic_vector(27 downto 0) := X"00061A8"; -- 500 Hz   "
-    constant clk_limit_cntr : std_logic_vector(27 downto 0) := X"007A120"; -- 100 Hz   "
+    constant clk_limit_cntr : std_logic_vector(27 downto 0) := X"000C350"; -- 100 Hz   "
     constant clk_limit_seconds : std_logic_vector(27 downto 0) := X"2FAF07E"; -- 1Hz   "
     --constant clk_limit_3_seconds : std_logic_vector(27 downto 0) := ; -- 1Hz   "
     
@@ -178,7 +178,7 @@ begin
     
     
     --TOGGLE_SET: button_toggle port map(SW(0), active);
-    DEC_COUNT: quad_counter port map(Clk_out_cntr, S3, S1, Cntr_1, Cntr_2, Cntr_3, Cntr_4, carry); -- counts based on clock signal
+    DEC_COUNT: quad_counter port map(Clk_out_cntr, S3, S2, Cntr_1, Cntr_2, Cntr_3, Cntr_4, carry); -- counts based on clock signal
     
     --define the decimal position for countdown
     DEC_POS_SET: dot_control port map(Clk_out_seconds, S2, Decimal_pos, countdown_out);
