@@ -59,12 +59,15 @@ begin
                        when others => states <= "0100";  --start at reset.
                  end case;
 		    end if;
-		  
+		     --the flag is to help prevent debouncing. there must be at least 2 clock procceses before a state chaneg can happen again
+		     --1st clock -> flag is able to reset, state cant change if flag is 1.
+		     --second clock -> state is able to chnage again.
+		     --if debounceing occurs then then the flag will not reset thereby preventing state change.
 		    if change_state = '0' then
 		      flag <= '0';    
 		    end if;
 		  
-            --states <= "010";    
+            --states <= "0101" etc..;    
             S1 <= states(3);
             S2 <= states(2);
             S3 <= states(1);

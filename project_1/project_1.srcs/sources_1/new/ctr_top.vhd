@@ -165,7 +165,7 @@ begin
     DIV_CNTR_SET: my_divider port map(CLK100MHZ, clk_limit_cntr, Clk_out_cntr);
     DIV_SECONDS_SET: my_divider port map(CLK100MHZ, clk_limit_seconds, Clk_out_seconds);
     
-    --IDK WHAT THIS ACTUALLY DOES/////asda/s/dasf/as
+    --decides which input will be used to change the state.
     INPUT_MULTIPLEXER_SET: input_multiplexer port map(S2, BTNC, countdown_out, change_state);
     
     STATE_SET: state port map(clk_out_disp, change_state, S1, S2, S3, S4);

@@ -43,12 +43,15 @@ begin
 
 process(selector, button, countdown)
 begin
-
+--description:
+--simple multiplexer to select which input will chnage the state. 
+--takes state as an argument to determine iof it its the button or light countdown
 if selector = '0' then
-    change_state <= button;
+    change_state <= button; --use the button.
 end if;
 if selector = '1' then
-    change_state <= not countdown;
+    change_state <= not countdown; --use the countdown, 
+    --inverted because the state flag will instantly change if it goes low then high causing an unwanted state chaneg
 end if;
     
 
