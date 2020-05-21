@@ -47,7 +47,7 @@ entity dot_control is
 end DOT_CONTROL;
 
 architecture Behavioral of DOT_CONTROL is
-    signal temp_dec_pos : STD_LOGIC_VECTOR(2 downto 0);
+    signal temp_dec_pos : STD_LOGIC_VECTOR(2 downto 0) := "000";
 begin
     dot_process: process(CLK)
         begin
