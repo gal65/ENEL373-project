@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineer: Jarrod Zhu, Tristin Weastell, Gordon Lay
 -- 
 -- Create Date: 16.03.2020 09:26:09
 -- Design Name: 
@@ -8,8 +8,8 @@
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
--- Description: 
--- 
+-- Description: Switches the displays at each clock cycle and acts as a refresh for the display.
+--
 -- Dependencies: 
 -- 
 -- Revision:
@@ -53,11 +53,13 @@ architecture Behavioral of Multiplex is
 begin
 shift: process (clk_in)
 begin
-    --shifts the value left 1 each clock input
+    --shifts the value left 1 each clock input which switches so fast it gives the impression the whole screen is on
+    -- the rotating bit determines which of the 8 digits on the display is switched on
     if rising_edge(Clk_in) then
         temp <= unsigned (to_stdlogicvector(to_bitvector(std_logic_vector(temp)) rol 1));
         disp <= temp;
         
+        --enables decimal points to be shown on the display (used for the countdown) else they are all off
         if en_dec = '1' then
             dec_pos_buffer <= dec_pos;
         else
@@ -65,7 +67,7 @@ begin
         end if;
         
         
-        --cases for which number is displayed\
+        --cases for which number is displayed on each clock cycle only for the first 4 digits, the other 4 are set off in the cycle
         case temp is					 -- abcdefg segments
 				when "11111110"	=> cntr_out <= cntr_1;
 				                   dec_point <= dec_pos_buffer(0);	  -- if BCD is "0000" write a zero to display
@@ -75,13 +77,10 @@ begin
 				                   dec_point <= dec_pos_buffer(2);   --decimal point here
 				when "11110111"	=> cntr_out <= cntr_4;
 				                   dec_point <= '1';
-				when others => cntr_out <= "0000";
+				when others => cntr_out <= "0000"; -- Sets 0 for all display cases that are not the first 4
 				                   dec_point <= '1';
 		end case;
 		
-		
-        
-        
     end if;
 end process;
     

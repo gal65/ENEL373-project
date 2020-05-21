@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineer: Jarrod Zhu, Tristin Weastell, Gordon Lay
 -- 
 -- Create Date: 09.03.2020 09:20:05
 -- Design Name: 
@@ -8,7 +8,7 @@
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
--- Description: 
+-- Description: The top level defines all the connections and signals to each component
 -- 
 -- Dependencies: 
 -- 
@@ -48,18 +48,22 @@ entity ctr_top is
 end ctr_top;
 
 architecture Behavioral of ctr_top is
+    -- DEFINING ALL SIGNALS --
+    
     signal leds_out: std_logic_vector (1 to 7);
     signal Clk_out_disp:  STD_LOGIC;
     signal Clk_out_cntr:  STD_LOGIC;
     signal Clk_out_seconds:  STD_LOGIC;
     
+    --counter signals
     signal Cntr_1 : std_logic_vector (0 to 3);
     signal Cntr_2 : std_logic_vector (0 to 3);
     signal Cntr_3 : std_logic_vector (0 to 3);
     signal Cntr_4 : std_logic_vector (0 to 3);
     signal carry: std_logic;
-    
     signal Cntr_out: std_logic_vector (0 to 3);
+    
+    --enable and reset signals
     signal active : STD_LOGIC;
     signal reset_clock: STD_LOGIC;
         
@@ -78,13 +82,14 @@ architecture Behavioral of ctr_top is
     
     --signal for the output of the countodwn clock
     signal countdown_out : std_logic; 
-    
+   
+    --assigns constants that correspond to a set time in clock divider
     constant clk_limit_disp : std_logic_vector(27 downto 0) := X"00061A8"; -- 500 Hz   "
     constant clk_limit_cntr : std_logic_vector(27 downto 0) := X"000C350"; -- 100 Hz   "
     constant clk_limit_seconds : std_logic_vector(27 downto 0) := X"2FAF07E"; -- 1Hz   "
     --constant clk_limit_3_seconds : std_logic_vector(27 downto 0) := ; -- 1Hz   "
     
-    
+    -- DEFINING COMPONENTS --
     component DOT_CONTROL
         Port ( CLK : in STD_LOGIC;
            EN : in STD_LOGIC;
@@ -155,16 +160,12 @@ architecture Behavioral of ctr_top is
     
     
 begin
-    
-    
-    --clock stuff
+    --multiple dividers used as different timings for components
     DIV_CLK_SET: my_divider port map(CLK100MHZ, clk_limit_disp, Clk_out_disp);
     DIV_CNTR_SET: my_divider port map(CLK100MHZ, clk_limit_cntr, Clk_out_cntr);
     DIV_SECONDS_SET: my_divider port map(CLK100MHZ, clk_limit_seconds, Clk_out_seconds);
-    --all digits
     
-   
-    
+    --IDK WHAT THIS ACTUALLY DOES/////asda/s/dasf/as
     INPUT_MULTIPLEXER_SET: input_multiplexer port map(S2, BTNC, countdown_out, change_state);
     
     STATE_SET: state port map(clk_out_disp, change_state, S1, S2, S3, S4);
@@ -176,16 +177,16 @@ begin
    
     --state switching, takes a single button input, and changes the state forward 1.
     
-    
-    --TOGGLE_SET: button_toggle port map(SW(0), active);
+    --decade counter which counts up to a limit of 9999
     DEC_COUNT: quad_counter port map(Clk_out_cntr, S3, S2, Cntr_1, Cntr_2, Cntr_3, Cntr_4, carry); -- counts based on clock signal
     
     --define the decimal position for countdown
     DEC_POS_SET: dot_control port map(Clk_out_seconds, S2, Decimal_pos, countdown_out);
     
+    --connects the multiplexer up which changes the display and displays each counter
     MUX_SET: Multiplex port map(clk_out_disp, Cntr_1, Cntr_2, Cntr_3, Cntr_4, Decimal_pos, S2, AN, Cntr_out, DP);
     
-
+    --sets the individual BCD segments on the board to show the number
     BCD_SET: BCD_to_7SEG port map(Cntr_out, S4, S3,
                                         leds_out(1) => CA, 
                                         leds_out(2) => CB, 
