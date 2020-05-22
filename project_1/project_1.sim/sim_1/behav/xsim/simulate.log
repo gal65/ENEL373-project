@@ -1,9 +1,2 @@
 Vivado Simulator 2019.2
 Time resolution is 1 ps
-Note: Testbench completed successfully!
-Time: 1000100 ns  Iteration: 0  Process: /Quad_4_bit_counter_TB/io_process  File: C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1/project_1.srcs/sim_1/new/Quad_4_bit_counter_tb.vhd
-Note: Initial counter state is not 0000. Test bench will not report errors correctly.
-Time: 1000200 ns  Iteration: 0  Process: /Quad_4_bit_counter_TB/io_process  File: C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1/project_1.srcs/sim_1/new/Quad_4_bit_counter_tb.vhd
-Failure: count 9 failed.
-Time: 1001100 ns  Iteration: 0  Process: /Quad_4_bit_counter_TB/io_process  File: C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1/project_1.srcs/sim_1/new/Quad_4_bit_counter_tb.vhd
-$finish called at time : 1001100 ns : File "C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1/project_1.srcs/sim_1/new/Quad_4_bit_counter_tb.vhd" Line 74

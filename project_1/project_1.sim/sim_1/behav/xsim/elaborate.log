@@ -1,6 +1,6 @@
 Vivado Simulator 2019.2
 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: E:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 5d170cc69bd840dd9024315db9e7e7e8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Quad_4_bit_counter_TB_behav xil_defaultlib.Quad_4_bit_counter_TB -log elaborate.log 
+Running: E:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 5d170cc69bd840dd9024315db9e7e7e8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot dot_control_tb_behav xil_defaultlib.dot_control_tb -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -12,7 +12,6 @@ Compiling package std.textio
 Compiling package ieee.std_logic_1164
 Compiling package ieee.std_logic_arith
 Compiling package ieee.std_logic_unsigned
-Compiling architecture behavioral of entity xil_defaultlib.quad_counter [quad_counter_default]
-Compiling architecture behavioral of entity xil_defaultlib.Quad_4_bit_counter [quad_4_bit_counter_default]
-Compiling architecture behavioral of entity xil_defaultlib.quad_4_bit_counter_tb
-Built simulation snapshot Quad_4_bit_counter_TB_behav
+Compiling architecture behavioral of entity xil_defaultlib.dot_control [dot_control_default]
+Compiling architecture behavioral of entity xil_defaultlib.dot_control_tb
+Built simulation snapshot dot_control_tb_behav

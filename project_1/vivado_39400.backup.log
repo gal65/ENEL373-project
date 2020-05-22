@@ -1,0 +1,22 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sun May 17 15:31:52 2020
+# Process ID: 39400
+# Current directory: C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent40596 C:\Users\Jarrod\OneDrive - University of Canterbury\UC 2020\ENEL373\Project\rxnmongroup4\project_1\project_1.xpr
+# Log file: C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1/vivado.log
+# Journal file: C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1\vivado.jou
+#-----------------------------------------------------------
+startopen_project {C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1/project_1.xpr}
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/Jarrod/OneDrive - University of Canterbury/UC 2020/ENEL373/Project/rxnmongroup4/project_1'
+INFO: [Project 1-313] Project file moved from 'C:/Users/penis head/Documents/ENCE373PROJECT/rxnmongroup4/project_1' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO:INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2019.2/data/open_open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:31 . Memory (MB): peak = 765.164 ; gain = 12updateupdate_compile_order -fileset sourexit
+INFO: [Common 17-206] Exiting Vivado at Sun May 17 15:35:11 2020...
+20...
