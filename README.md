@@ -3,11 +3,11 @@
 --------------------------------------------------------------------------------
 
 ### Authors:
-Jarrod Zhu, jzh173@uclive.ac.nz, jzh173; 
+Jarrod Zhu, jzh173@uclive.ac.nz, 39721130 
 
-Tristin Weastell, twe34@uclive.ac.nz, twe34;
+Tristin Weastell, twe34@uclive.ac.nz, 88939076
  
-Gordon Lay, gal65@uclive.ac.nz, gal65;
+Gordon Lay, gal65@uclive.ac.nz, 75846097
 
 --------------------------------------------------------------------------------
 
